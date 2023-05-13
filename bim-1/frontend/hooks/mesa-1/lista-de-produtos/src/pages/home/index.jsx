@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
-import api from './services/api';
+import api from '../../services/api';
 
-import './index.css';
+import '../../index.css';
 
-function App() {
+function Home() {
   const [listProducts, setListProducts] = useState([]);
 
   useEffect(() => {
@@ -16,7 +15,6 @@ function App() {
       try {
         const response = await api.get('/products');
         setListProducts(response.data.products);
-        console.log(response.data.products);
       } catch (error) {
         console.error(error);
       }
@@ -24,10 +22,10 @@ function App() {
     getProducts();
   }, []);
 
+
   return (
     <div>
-      <Navbar />
-      <div className="flex flex-wrap mx-auto w-11/12 mb-10">
+      <div className="flex flex-wrap justify-center mx-auto w-11/12  mb-10">
         {listProducts.length > 0 ? (
           listProducts.map((product) => {
             return (
@@ -50,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

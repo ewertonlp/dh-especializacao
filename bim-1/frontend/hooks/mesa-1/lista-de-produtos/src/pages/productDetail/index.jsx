@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-import Navbar from '../components/Navbar';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
-import api from '../services/api';
+import api from '../../services/api';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -45,9 +44,8 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navbar />
-      <div className="grid grid-cols-2 mx-auto w-8/12 py-12">
-        <div>
+      <div className="grid grid-cols-2 mx-auto md:w-8/12 sm:w-full md:py-12">
+        <div className="sm:mr-5">
           <img
             src={detailProduct.thumbnail}
             alt={detailProduct.title}
@@ -60,7 +58,9 @@ const ProductDetail = () => {
             <p className="font-semibold text-yellow-400 pb-2">
               {detailProduct.brand}
             </p>
-            <p className="text-2xl font-bold">$ {detailProduct.price}</p>
+            <p className="text-2xl font-bold text-neutral-700">
+              $ {detailProduct.price}
+            </p>
           </div>
           <p className="text-sm border rounded-md p-3">
             {detailProduct.description}
@@ -71,7 +71,7 @@ const ProductDetail = () => {
         <p className="text-center font-semibold text-2xl text-neutral-800">
           Veja Outros Produtos
         </p>
-        <div className="flex justify-between pt-5">
+        <div className="flex justify-between flex-wrap pt-5">
           {randomProducts.slice(0, 4).map((product) => (
             <Link key={product.id} to={`/productdetail/${product.id}`}>
               <ProductCard
