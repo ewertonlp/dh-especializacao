@@ -1,0 +1,32 @@
+/* eslint-disable react/prop-types */
+
+import { HiPencilSquare, HiTrash } from 'react-icons/hi2';
+
+const TaskCard = ({ title, category, date, description, deleteTask, edit }) => {
+  return (
+    <div className="w-11/12 border rounded-lg border-neutral-300 p-4 mt-8">
+      <div className="flex justify-between">
+        <div>
+          <h2 className="text-lg font-medium">{title}</h2>
+          <p className="text-sm text-neutral-700">{category}</p>
+        </div>
+        <h2 className="text-xl font-medium">{date}</h2>
+      </div>
+      <div className="flex justify-between pt-4">
+        <p className="text-neutral-700">{description}</p>
+        <div className="flex text-2xl">
+          <HiPencilSquare
+            onClick={edit}
+            className="text-green-500 cursor-pointer"
+          />
+          <HiTrash
+            onClick={deleteTask}
+            className="text-red-400 ml-2 cursor-pointer"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TaskCard;
