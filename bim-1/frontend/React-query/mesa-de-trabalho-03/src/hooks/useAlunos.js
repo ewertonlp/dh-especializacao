@@ -26,7 +26,7 @@ export default function useAlunos() {
   const editAlunoMutate = useMutation(editAluno, {
     onSuccess: () => {
       toast.success('Informações salvas com sucesso!');
-      queryClient.invalidQueries(['@alunos']);
+      queryClient.invalidateQueries(['@alunos']);
     },
     onError: () => {
       toast.error('Erro ao editar informações.');
@@ -36,7 +36,7 @@ export default function useAlunos() {
   const deleteAlunoMutate = useMutation(deleteAluno, {
     onSuccess: () => {
       toast.success('Aluno excluído com sucesso!');
-      queryClient.invalidQueries(['@alunos']);
+      queryClient.invalidateQueries(['@alunos']);
     },
     onError: () => {
       toast.error('Erro ao excluir aluno.');
