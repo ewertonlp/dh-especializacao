@@ -32,7 +32,7 @@ function App() {
     <QueryClientProvider client={client}>
       <div className="h=screen md:mx-auto sm:mx-4 md:w-10/12 sm:w-full mb-12 bg-slate-950">
         <h2 className="text-gray-200 font-medium text-2xl pt-10 ">
-          Diário Eletrônico
+          Gestão de Alunos
         </h2>
         <Form
           className=""

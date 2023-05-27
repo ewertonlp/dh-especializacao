@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import getAlunos, {
   saveAluno,
