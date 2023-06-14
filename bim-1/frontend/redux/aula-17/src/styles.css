@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+input {
+  height: 45px;
+  width: 300px;
+  border: 1px solid #cdcdcd;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  background-color: #cdcdcd;
+  margin: 10px 0;
+  border: none;
+
+}
