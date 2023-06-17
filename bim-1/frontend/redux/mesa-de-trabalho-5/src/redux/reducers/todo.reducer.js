@@ -16,22 +16,16 @@ const State = {
 };
 
 export default function TodoReducer(state = State, action) {
-    const copyState = { ...state };
-//   if (action.type === 'ADD_TASK') {
-//     const copyState = { ...state };
+  const copyState = { ...state };
 
-//     copyState.tasks.push({ ...action.payload.task });
-
-//     return { ...copyState };
-//   }
-
-switch (action.type) {
-    case "ADD_TASK":
-        copyState.tasks.push({ ...action.payload.task });
-        return { ...copyState };
-    case "DELETE_TASK":
-        copyState.tasks.splice(action.payload.id, 1);
-        return { ...copyState };
-    default: return state;
+  switch (action.type) {
+    case 'ADD_TASK':
+      copyState.tasks.push({ ...action.payload.task });
+      return { ...copyState };
+    case 'DELETE_TASK':
+      copyState.tasks.splice(action.payload.id, 1);
+      return { ...copyState };
+    default:
+      return state;
   }
 }
